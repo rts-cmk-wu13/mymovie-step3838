@@ -11,7 +11,7 @@ fetch("https://api.themoviedb.org/3/trending/movie/week"), {
   header.innerHTML = `
   //burger menu
   <h1>MyMovies</h1>
-  
+
   <label class="switch">
   <input type="checkbox">
   <span class="slider round"></span>
@@ -20,16 +20,6 @@ fetch("https://api.themoviedb.org/3/trending/movie/week"), {
 
 document.body.prepend(header);
 
-let divElm = document.createElement("div")
+let  = document.createElement("div")
 
 /* ---------- */
-
-/* let dataArray = [];
-
-fetch('https://api.example.com/data') // Replace with your API URL
-  .then(response => response.json()) // Convert response to JSON
-  .then(data => {
-    dataArray = data; // Store API data in the array
-    console.log(dataArray); // Log the array to see the data
-  })
-  .catch(error => console.error('Error fetching data:', error)); */
