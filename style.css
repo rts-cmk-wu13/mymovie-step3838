@@ -83,16 +83,21 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
 /* Header end*/
 
 /* Now showing */
 .moviesWrapper {
-    display: flex; 
-    gap: 15px; 
-    justify-content: flex-start;  /* Aligns items to start */
-    overflow-x: auto;  /* Enables horizontal scrolling */
-    scroll-behavior: smooth; /* Smooth scrolling */
-    padding: 10px; /* Adds some padding */
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+    /* Aligns items to start */
+    overflow-x: auto;
+    /* Enables horizontal scrolling */
+    scroll-behavior: smooth;
+    /* Smooth scrolling */
+    padding: 10px;
+    /* Adds some padding */
 }
 
 /* Hides the scrollbar */
@@ -101,7 +106,8 @@ input:checked+.slider:before {
 } */
 
 .movie {
-    width: 143px; /* Match image width */
+    width: 143px;
+    /* Match image width */
 }
 
 .movie img {
@@ -110,6 +116,8 @@ input:checked+.slider:before {
     border-radius: 10px;
 }
 
+
+/* see more */
 .seeMoreBtn {
     border-radius: 34px;
     color: #AAA9B1;
@@ -117,6 +125,34 @@ input:checked+.slider:before {
     background-color: #fff;
     font-size: 18px;
     padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* pop up */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    float: right;
+    font-size: 24px;
     cursor: pointer;
 }
 /* Now showing end*/
