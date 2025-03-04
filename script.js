@@ -1,4 +1,4 @@
-// Fetch now-playing movies from TMDb API
+// Fetch now-playing movies from the TMDb API
 fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1", {
   headers: {
     accept: "application/json",
@@ -7,53 +7,57 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1", {
 })
   .then(response => response.json()) // Convert response to JSON
   .then(data => {
-    let movieContainer = document.createElement("div"); // Main container
+    // Create a container for the movies
+    let movieContainer = document.createElement("div");
     movieContainer.classList.add("movieContainer");
 
-    let heading = document.createElement("h2"); // Section title
+    // Create and add a heading
+    let heading = document.createElement("h2");
     heading.textContent = "Now Showing";
 
-    let button = document.createElement("button"); // "See More" button
+    // Create and add a "See more" button
+    let button = document.createElement("button");
     button.textContent = "See more";
     button.classList.add("seeMoreBtn");
 
-    // Create modal container
+    // Create a modal pop-up for extra content
     let modal = document.createElement("div");
     modal.classList.add("modal");
     modal.innerHTML = `
     <div class="modal-content">
         <span class="close">&times;</span>
-        <p>Well this is akward... i dont have anything else to show you aha ha..ha...ha..</p>
+        <p>Well this is awkward... I don't have anything else to show you.</p>
     </div>
 `;
     document.body.appendChild(modal);
 
-    // Add event listener to show modal
+    // Show the modal when clicking "See more"
     button.addEventListener("click", () => {
       modal.style.display = "block";
     });
 
-    // Close modal when clicking the close button
+    // Close the modal when clicking the close button
     modal.querySelector(".close").addEventListener("click", () => {
       modal.style.display = "none";
     });
 
-    // Close modal when clicking outside of it
+    // Close the modal when clicking outside of it
     window.addEventListener("click", (e) => {
       if (e.target === modal) {
         modal.style.display = "none";
       }
     });
 
-
-    let moviesWrapper = document.createElement("div"); // New wrapper for movies
+    // Create a wrapper for the movie list
+    let moviesWrapper = document.createElement("div");
     moviesWrapper.classList.add("moviesWrapper");
 
+    // Append heading, button, and wrapper to the main container
     movieContainer.appendChild(heading);
     movieContainer.appendChild(button);
-    movieContainer.appendChild(moviesWrapper); // Append wrapper to container
+    movieContainer.appendChild(moviesWrapper);
 
-    // Loop through movies and add them to moviesWrapper
+    // Loop through the movie data and display each movie
     data.results.forEach(movie => {
       let movieElement = document.createElement("div");
       movieElement.classList.add("movie");
@@ -61,14 +65,15 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1", {
           <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
           <h2>${movie.title}</h2>
       `;
-      moviesWrapper.appendChild(movieElement); // Append to wrapper
+      moviesWrapper.appendChild(movieElement);
     });
 
+    // Add the movie container to the page
     document.body.appendChild(movieContainer);
   })
   .catch(error => console.error("Error fetching data:", error));
 
-// Create header with title and toggle switch
+// Create a header with a title and a toggle switch
 let header = document.createElement("header");
 header.classList.add("movie_header");
 
@@ -80,4 +85,5 @@ header.innerHTML = `
   </label>
 `;
 
-document.body.prepend(header); // Add header to top of page
+// Add the header to the top of the page
+document.body.prepend(header);

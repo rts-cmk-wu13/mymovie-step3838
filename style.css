@@ -1,27 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
+/* Reset default spacing and set box-sizing */
 * {
     margin: 0 auto;
     box-sizing: border-box;
 }
 
+/* Set body styles */
 body {
     max-width: 600px;
     color: #110E47;
     font-family: "Merriweather", serif;
-    font-weight: 400;
-    font-style: normal;
     font-size: 18px;
 }
 
-
-/* Header */
+/* Header styling */
 header {
     display: flex;
     padding: 1.5em;
 }
 
-/* The switch - box around slider */
+/* Toggle switch container */
 .switch {
     position: relative;
     display: inline-block;
@@ -29,14 +28,14 @@ header {
     height: 34px;
 }
 
-/* Hide default HTML checkbox */
+/* Hide default checkbox */
 .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-/* The slider */
+/* Switch slider */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -45,10 +44,10 @@ header {
     right: 0;
     bottom: 0;
     background-color: #AAA9B1;
-    -webkit-transition: .4s;
     transition: .4s;
 }
 
+/* Slider circle */
 .slider:before {
     position: absolute;
     content: "";
@@ -57,25 +56,25 @@ header {
     left: 4px;
     bottom: 4px;
     background-color: #fff;
-    -webkit-transition: .4s;
     transition: .4s;
 }
 
-input:checked+.slider {
+/* Change background when switch is toggled */
+input:checked + .slider {
     background-color: #15141F;
 }
 
-input:focus+.slider {
+/* Add focus effect */
+input:focus + .slider {
     box-shadow: 0 0 1px #fff;
 }
 
-input:checked+.slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
+/* Move slider circle when switched */
+input:checked + .slider:before {
     transform: translateX(26px);
 }
 
-/* Rounded sliders */
+/* Rounded slider style */
 .slider.round {
     border-radius: 34px;
 }
@@ -84,30 +83,19 @@ input:checked+.slider:before {
     border-radius: 50%;
 }
 
-/* Header end*/
-
-/* Now showing */
+/* Movie list container */
 .moviesWrapper {
     display: flex;
     gap: 15px;
     justify-content: flex-start;
-    /* Aligns items to start */
     overflow-x: auto;
-    /* Enables horizontal scrolling */
     scroll-behavior: smooth;
-    /* Smooth scrolling */
     padding: 10px;
-    /* Adds some padding */
 }
 
-/* Hides the scrollbar */
-/* .moviesWrapper::-webkit-scrollbar {
-    display: none; 
-} */
-
+/* Individual movie item */
 .movie {
     width: 143px;
-    /* Match image width */
 }
 
 .movie img {
@@ -116,8 +104,7 @@ input:checked+.slider:before {
     border-radius: 10px;
 }
 
-
-/* see more */
+/* "See more" button */
 .seeMoreBtn {
     border-radius: 34px;
     color: #AAA9B1;
@@ -128,7 +115,7 @@ input:checked+.slider:before {
     cursor: pointer;
 }
 
-/* pop up */
+/* Pop-up modal (hidden by default) */
 .modal {
     display: none;
     position: fixed;
@@ -140,6 +127,7 @@ input:checked+.slider:before {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+/* Modal content box */
 .modal-content {
     background-color: white;
     margin: 15% auto;
@@ -150,9 +138,9 @@ input:checked+.slider:before {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Close button */
 .close {
     float: right;
     font-size: 24px;
     cursor: pointer;
 }
-/* Now showing end*/
