@@ -11,8 +11,12 @@ body {
     font-family: "Merriweather", serif;
     font-weight: 400;
     font-style: normal;
+    font-size: 18px;
+    background-color: #15141F;
 }
 
+
+/* Header */
 header {
     display: flex;
     padding: 1.5em;
@@ -80,3 +84,40 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+/* Header end*/
+
+/* Now showing */
+.moviesWrapper {
+    display: flex; 
+    gap: 15px; 
+    justify-content: flex-start;  /* Aligns items to start */
+    overflow-x: auto;  /* Enables horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    padding: 10px; /* Adds some padding */
+}
+
+/* Hides the scrollbar */
+/* .moviesWrapper::-webkit-scrollbar {
+    display: none; 
+} */
+
+.movie {
+    width: 143px; /* Match image width */
+}
+
+.movie img {
+    width: 143px;
+    height: 212px;
+    border-radius: 10px;
+}
+
+.seeMoreBtn {
+    border-radius: 34px;
+    color: #AAA9B1;
+    border: 2px solid #AAA9B1;
+    background-color: #fff;
+    font-size: 18px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+/* Now showing end*/
