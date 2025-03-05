@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+/* ----- */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 /* Reset default spacing and set box-sizing */
 * {
@@ -13,7 +14,11 @@ body {
     font-family: "Merriweather", serif;
     font-size: 18px;
 }
+/* ----- */
 
+
+
+/* ----- */
 /* Header styling */
 header {
     display: flex;
@@ -82,7 +87,11 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+/* ----- */
 
+
+
+/* ----- */
 /* Movie list container */
 .moviesWrapper {
     display: flex;
@@ -144,3 +153,22 @@ input:checked + .slider:before {
     font-size: 24px;
     cursor: pointer;
 }
+
+.movie-title {
+    font-family: "Mulish", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+.movie-rating {
+    font-family: "Mulish", sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #9C9C9C;
+  }
+
+  .fa-star{
+    color: #FFC319;
+    padding-right: 5px;
+  }
+/* ----- */
