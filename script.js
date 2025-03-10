@@ -2,7 +2,7 @@
 fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1", {
   headers: {
     accept: "application/json",
-    Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZDY2OGM0ZGJkM2NmOTUxZmE5ZWEzMDhlNzA0MTJjYyIsIm5iZiI6MTc0MDk5MDM1MC4xMjIsInN1YiI6IjY3YzU2NzhlNmNhOTAzNWE2YTdhNzAzNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gYWWaf3nQ4bSqOwtUVUEATUZIDWqXHGtaSsCk7PugNs"
+    Authorization: "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZDY2OGM0ZGJkM2NmOTUxZmE5ZWEzMDhlNzA0MTJjYyIsIm5iZiI6MTc0MDk5MDM1MC4xMjIsInN1YiI6IjY3YzU2NzhlNmNhOTAzNWE2YTdhNzAzNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gYWWaf3nQ4bSqOwtUVUEATUZIDWqXHGtaSsCk7PugNs"
   }
 })
   .then(response => response.json()) // Convert response to JSON
@@ -26,9 +26,9 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1", {
     modal.innerHTML = `
     <div class="modal-content">
         <span class="close">&times;</span>
-        <p>Well this is awkward... I don't have anything else to show you aha ha..ha..ha...</p>
+        <p>See more content.</p>
     </div>
-`;
+    `;
     document.body.appendChild(modal);
 
     // Show the modal when clicking "See more"
@@ -61,16 +61,16 @@ fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1", {
     data.results.forEach(movie => {
       let movieElement = document.createElement("div");
       movieElement.classList.add("movie");
-    
+
       // Convert vote_average to be out of 10
       let adjustedRating = (movie.vote_average / 1).toFixed(1);
-    
+
       movieElement.innerHTML = `
           <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
           <h2 class="movie-title">${movie.title}</h2>
           <h2 class="movie-rating"><span><i class="fa-solid fa-star"></i>${adjustedRating} / 10 IMDb</span></h2>
       `;
-    
+
       moviesWrapper.appendChild(movieElement);
     });
 
@@ -84,13 +84,18 @@ let header = document.createElement("header");
 header.classList.add("movie_header");
 
 header.innerHTML = `
-//burger menu
+  <button class="burger"><i class="fa-solid fa-bars-staggered"></i></button>
   <h1>MyMovies</h1>
   <label class="switch">
-    <input type="checkbox">
+    <input type="checkbox" id="darkModeToggle">
     <span class="slider round"></span>
   </label>
 `;
 
 // Add the header to the top of the page
 document.body.prepend(header);
+
+// Dark mode toggle functionality
+document.getElementById("darkModeToggle").addEventListener("change", function () {
+  document.body.classList.toggle("dark-mode");
+});

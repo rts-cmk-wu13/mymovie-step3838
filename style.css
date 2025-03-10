@@ -20,6 +20,11 @@ body {
 
 /* ----- */
 /* Header styling */
+.burger{
+    all: unset;
+    font-size: 20px;
+}
+
 header {
     display: flex;
     padding: 1.5em;
@@ -66,7 +71,7 @@ header {
 
 /* Change background when switch is toggled */
 input:checked + .slider {
-    background-color: #15141F;
+    background-color: #fff;
 }
 
 /* Add focus effect */
@@ -141,7 +146,7 @@ input:checked + .slider:before {
     background-color: white;
     margin: 15% auto;
     padding: 20px;
-    border-radius: 10px;
+   /*  border-radius: 10px; */
     width: 50%;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -150,7 +155,7 @@ input:checked + .slider:before {
 /* Close button */
 .close {
     float: right;
-    font-size: 24px;
+    font-size: 30px;
     cursor: pointer;
 }
 
@@ -172,3 +177,29 @@ input:checked + .slider:before {
     padding-right: 5px;
   }
 /* ----- */
+
+.dark-mode {
+    background-color: #15141F;
+    color: #DBE3FF;
+  }
+  
+  .dark-mode .seeMoreBtn {
+    background-color: #15141F;
+    border: 2px solid #DBE3FF;
+    color: #DBE3FF;
+  }
+  
+  .dark-mode .modal-content {
+    background-color: #15141F;
+    color: #DBE3FF;
+  }
+
+
+  .dark-mode .slider:before {
+    background-color: #15141F;
+}
+
+
+.dark-mode .movie-title{
+    color: #F0EFFA;
+}
