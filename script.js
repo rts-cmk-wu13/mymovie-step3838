@@ -1,8 +1,8 @@
 // Fetch now-playing movies from the TMDb API
-fetch("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1", {
+fetch("https://api.themoviedb.org/3/trending/movie/week", {
   headers: {
-    accept: "application/json",
-    Authorization: "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZDY2OGM0ZGJkM2NmOTUxZmE5ZWEzMDhlNzA0MTJjYyIsIm5iZiI6MTc0MDk5MDM1MC4xMjIsInN1YiI6IjY3YzU2NzhlNmNhOTAzNWE2YTdhNzAzNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gYWWaf3nQ4bSqOwtUVUEATUZIDWqXHGtaSsCk7PugNs"
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZDY2OGM0ZGJkM2NmOTUxZmE5ZWEzMDhlNzA0MTJjYyIsIm5iZiI6MTc0MDk5MDM1MC4xMjIsInN1YiI6IjY3YzU2NzhlNmNhOTAzNWE2YTdhNzAzNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gYWWaf3nQ4bSqOwtUVUEATUZIDWqXHGtaSsCk7PugNs'
   }
 })
   .then(response => response.json()) // Convert response to JSON
