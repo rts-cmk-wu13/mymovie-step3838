@@ -61,16 +61,21 @@ fetch("https://api.themoviedb.org/3/trending/movie/week", {
     data.results.forEach(movie => {
       let movieElement = document.createElement("div");
       movieElement.classList.add("movie");
-
+    
       // Convert vote_average to be out of 10
       let adjustedRating = (movie.vote_average / 1).toFixed(1);
-
+    
       movieElement.innerHTML = `
           <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
           <h2 class="movie-title">${movie.title}</h2>
           <h2 class="movie-rating"><span><i class="fa-solid fa-star"></i>${adjustedRating} / 10 IMDb</span></h2>
       `;
-
+    
+      // Add click event to navigate to details.html with movie ID
+      movieElement.addEventListener("click", () => {
+        window.location.href = `details.html?id=${movie.id}`;
+      });
+    
       moviesWrapper.appendChild(movieElement);
     });
 

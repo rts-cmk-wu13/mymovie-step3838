@@ -116,6 +116,7 @@ input:checked + .slider:before {
     width: 143px;
     height: 212px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
   
