@@ -7,46 +7,48 @@ fetch("https://api.themoviedb.org/3/trending/movie/week", {
 })
   .then(response => response.json()) // Convert response to JSON
   .then(data => {
-    // Create a container for the movies
-    let movieContainer = document.createElement("div");
-    movieContainer.classList.add("movieContainer");
+// Create a container for the movies
+let movieContainer = document.createElement("div");
+movieContainer.classList.add("movieContainer");
 
-    // Create and add a heading
-    let heading = document.createElement("h2");
-    heading.textContent = "Now Showing";
+// Create and add a heading
+let heading = document.createElement("h2");
+heading.textContent = "Now Showing";
 
-    // Create and add a "See more" button
-    let button = document.createElement("button");
-    button.textContent = "See more";
-    button.classList.add("seeMoreBtn");
+// Create and add a "See more" button
+let button = document.createElement("button");
+button.textContent = "See more";
+button.classList.add("seeMoreBtn");
 
-    // Create a modal pop-up for extra content
-    let modal = document.createElement("div");
-    modal.classList.add("modal");
-    modal.innerHTML = `
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>See more content.</p>
-    </div>
-    `;
-    document.body.appendChild(modal);
+// Create a modal pop-up for extra content
+let modal = document.createElement("div");
+modal.classList.add("modal");
+modal.innerHTML = `
+<div class="modal-content">
+    <span class="close">&times;</span>
+    <p>See more content.</p>
+</div>
+`;
+document.body.appendChild(modal);
 
-    // Show the modal when clicking "See more"
-    button.addEventListener("click", () => {
-      modal.style.display = "block";
-    });
+// Show the modal when clicking "See more"
+button.addEventListener("click", () => {
+  modal.style.display = "block";
+});
 
-    // Close the modal when clicking the close button
-    modal.querySelector(".close").addEventListener("click", () => {
-      modal.style.display = "none";
-    });
+// Close the modal when clicking the close button
+modal.querySelector(".close").addEventListener("click", () => {
+  modal.style.display = "none";
+});
 
-    // Close the modal when clicking outside of it
-    window.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.style.display = "none";
-      }
-    });
+// Close the modal when clicking outside of it
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+
 
     // Create a wrapper for the movie list
     let moviesWrapper = document.createElement("div");

@@ -95,7 +95,7 @@ input:checked + .slider:before {
 /* ----- */
 
 
-
+  
 /* ----- */
 /* Movie list container */
 .moviesWrapper {
@@ -121,6 +121,11 @@ input:checked + .slider:before {
 
   
 /* "See more" button */
+.seeMoreDiv{
+    display: flex;
+}
+
+
 .seeMoreBtn {
     border-radius: 34px;
     color: #AAA9B1;
