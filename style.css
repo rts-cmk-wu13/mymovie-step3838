@@ -1,34 +1,43 @@
-/* ----- */
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-/* Reset default spacing and set box-sizing */
+/* ============================== */
+/* RESET STYLES */
+/* ============================== */
+
+/* Reset default spacing and ensure consistent box-sizing */
 * {
     margin: 0 auto;
     box-sizing: border-box;
 }
 
-/* Set body styles */
+/* Set default styles for body */
 body {
     max-width: 600px;
     color: #110E47;
     font-family: "Merriweather", serif;
     font-size: 18px;
 }
-/* ----- */
 
+/* ============================== */
+/* HEADER STYLES */
+/* ============================== */
 
-
-/* ----- */
-/* Header styling */
-.burger{
-    all: unset;
+/* Style the menu button */
+.burger {
+    all: unset; /* Remove default styles */
     font-size: 20px;
 }
 
+/* Style the header container */
 header {
     display: flex;
     padding: 1.5em;
 }
+
+/* ============================== */
+/* TOGGLE SWITCH STYLES (DARK MODE) */
+/* ============================== */
 
 /* Toggle switch container */
 .switch {
@@ -45,7 +54,7 @@ header {
     height: 0;
 }
 
-/* Switch slider */
+/* Slider track */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -69,7 +78,7 @@ header {
     transition: .4s;
 }
 
-/* Change background when switch is toggled */
+/* Change background when toggled */
 input:checked + .slider {
     background-color: #fff;
 }
@@ -79,12 +88,12 @@ input:focus + .slider {
     box-shadow: 0 0 1px #fff;
 }
 
-/* Move slider circle when switched */
+/* Move slider circle when toggled */
 input:checked + .slider:before {
     transform: translateX(26px);
 }
 
-/* Rounded slider style */
+/* Rounded slider design */
 .slider.round {
     border-radius: 34px;
 }
@@ -92,12 +101,12 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
-/* ----- */
 
+/* ============================== */
+/* MOVIE LIST STYLES */
+/* ============================== */
 
-  
-/* ----- */
-/* Movie list container */
+/* Movie container */
 .moviesWrapper {
     display: flex;
     gap: 15px;
@@ -112,6 +121,7 @@ input:checked + .slider:before {
     width: 143px;
 }
 
+/* Movie poster */
 .movie img {
     width: 143px;
     height: 212px;
@@ -119,12 +129,13 @@ input:checked + .slider:before {
     cursor: pointer;
 }
 
-  
-/* "See more" button */
-.seeMoreDiv{
+/* ============================== */
+/* "SEE MORE" BUTTON */
+/* ============================== */
+
+.seeMoreDiv {
     display: flex;
 }
-
 
 .seeMoreBtn {
     border-radius: 34px;
@@ -136,7 +147,11 @@ input:checked + .slider:before {
     cursor: pointer;
 }
 
-/* Pop-up modal (hidden by default) */
+/* ============================== */
+/* MODAL STYLES */
+/* ============================== */
+
+/* Modal (hidden by default) */
 .modal {
     display: none;
     position: fixed;
@@ -153,7 +168,6 @@ input:checked + .slider:before {
     background-color: white;
     margin: 15% auto;
     padding: 20px;
-   /*  border-radius: 10px; */
     width: 50%;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -166,47 +180,60 @@ input:checked + .slider:before {
     cursor: pointer;
 }
 
+/* ============================== */
+/* MOVIE TEXT STYLES */
+/* ============================== */
+
+/* Movie title */
 .movie-title {
     font-family: "Mulish", sans-serif;
     font-size: 14px;
     font-weight: bold;
-  }
+}
 
+/* Movie rating */
 .movie-rating {
     font-family: "Mulish", sans-serif;
     font-size: 12px;
     font-weight: bold;
     color: #9C9C9C;
-  }
+}
 
-  .fa-star{
+/* Star icon */
+.fa-star {
     color: #FFC319;
     padding-right: 5px;
-  }
-/* ----- */
+}
 
+/* ============================== */
+/* DARK MODE STYLES */
+/* ============================== */
+
+/* Background and text color for dark mode */
 .dark-mode {
     background-color: #15141F;
     color: #DBE3FF;
-  }
-  
-  .dark-mode .seeMoreBtn {
+}
+
+/* Style "See more" button in dark mode */
+.dark-mode .seeMoreBtn {
     background-color: #15141F;
     border: 2px solid #DBE3FF;
     color: #DBE3FF;
-  }
-  
-  .dark-mode .modal-content {
+}
+
+/* Modal content in dark mode */
+.dark-mode .modal-content {
     background-color: #15141F;
     color: #DBE3FF;
-  }
+}
 
-
-  .dark-mode .slider:before {
+/* Slider button in dark mode */
+.dark-mode .slider:before {
     background-color: #15141F;
 }
 
-
-.dark-mode .movie-title{
+/* Movie title in dark mode */
+.dark-mode .movie-title {
     color: #F0EFFA;
 }
