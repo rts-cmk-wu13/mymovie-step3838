@@ -59,17 +59,33 @@ function displayMovies(movies, sectionTitle) {
   const moviesWrapper = document.createElement("div");
   moviesWrapper.classList.add("moviesWrapper");
 
+  // Special styling for 'Popular' section
+  if (sectionTitle === "Popular") {
+    moviesWrapper.style.display = "flex";
+    moviesWrapper.style.flexDirection = "column"; // Stack movies vertically
+    moviesWrapper.style.flexWrap = "wrap"; // Allow wrapping
+    moviesWrapper.style.alignContent = "flex-start"; // Align to the left
+    moviesWrapper.style.gap = "20px"; // Add spacing between movies
+  }
+
   movieContainer.append(heading, moviesWrapper);
 
   movies.forEach((movie) => {
     const movieElement = document.createElement("div");
     movieElement.classList.add("movie");
 
+    // Apply special class for Popular movies
+    if (sectionTitle === "Popular") {
+      movieElement.classList.add("popular-movie");
+    }
+
     const adjustedRating = movie.vote_average.toFixed(1);
     movieElement.innerHTML = `
       <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
-      <h2 class="movie-title">${movie.title}</h2>
-      <h2 class="movie-rating"><span><i class="fa-solid fa-star"></i>${adjustedRating} / 10 IMDb</span></h2>
+      <div class="movie-info">
+        <h2 class="movie-title">${movie.title}</h2>
+        <h2 class="movie-rating"><span><i class="fa-solid fa-star"></i>${adjustedRating} / 10 IMDb</span></h2>
+      </div>
     `;
 
     movieElement.addEventListener("click", () => {
